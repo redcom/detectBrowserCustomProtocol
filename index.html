@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Simple method to detect if a custom protocol exist and has a handler</title>
+    <meta name="Generator" content="Vim/7.4">
+    <meta name="plugin-version" content="vim7.4_v1">
+    <meta name="syntax" content="html">
+    <meta name="settings" content="number_lines,use_css,pre_wrap,no_foldcolumn,expand_tabs,line_ids,prevent_copy=">
+    <meta name="colorscheme" content="mango">
+    <style type="text/css">
+    </style>
+
+</head>
+
+<body>
+    <a href="magnet:?xt=urn:btih:f4fb42b7088600bfc1df7239856d960bbb75e4b6&dn=Faker&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" />Custom protocol: magnet:?</a>
+<br />
+    <a href="no-magnet:?xt=urn:btih:f4fb42b7088600bfc1df7239856d960bbb75e4b6&dn=Faker&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337" />Custom protocol:no-magnet: does not exist and has no handler</a>
+</body>
+
+    <script type='text/javascript'>
+
+        var as = document.getElementsByTagName("a")[0];
+
+        as.addEventListener('click', function(event) { 
+                var found = false;
+                var c = window.setTimeout(function() {
+                            !found?console.log('It is not installed'):''; 
+                    }, 2000);
+
+                window.addEventListener('blur', function() {
+                    console.log("Custom url is installed and has a handler");
+                        found = true;               
+                }, false);
+
+                return false;
+
+        }, false);
+
+
+       var ns = document.getElementsByTagName('a')[1];
+       ns.addEventListener('click', function(event) { 
+                var found = false;
+                var c = window.setTimeout(function() {
+                            !found?console.log('It is not installed'):''; 
+                    }, 2000);
+
+                window.addEventListener('blur', function() {
+                    console.log("Custom url is installed and has a handler");
+                        found = true;               
+                }, false);
+
+                return false;
+
+        }, false);
+    
+</script>
+</html>
+<!-- vim: set foldmethod=manual : -->
